@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<iconize:IconTabbedPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  xmlns:views="clr-namespace:Giffy.Views;assembly=Giffy"
+  prism:ViewModelLocator.AutowireViewModel="True"
+  xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+  xmlns:controls="clr-namespace:Giffy.Controls;assembly=Giffy"
+  x:Class="Giffy.Views.MainPage">
+
+  <controls:IconTabItemPage Icon="md-collections">
+    <x:Arguments>
+      <views:SyntheticGIFPage/>
+    </x:Arguments>
+  </controls:IconTabItemPage>
+
+  <controls:IconTabItemPage Icon="md-camera-roll">
+    <x:Arguments>
+      <views:AdultsGIFPage />
+    </x:Arguments>
+  </controls:IconTabItemPage>
+
+</iconize:IconTabbedPage>
