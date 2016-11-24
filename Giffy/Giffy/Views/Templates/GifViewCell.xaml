@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:videoPlayer="clr-namespace:Xam.Plugins.VideoPlayer;assembly=Xam.Plugins.VideoPlayer"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Giffy.Views.Templates.GifViewCell">
+  <Grid x:Name="GifPanel" BackgroundColor="Aqua">
+    <forms:CachedImage Grid.Row="0" x:Name="Thumbnail" Source="{Binding Thumbnail}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+    <ActivityIndicator Grid.Row="0" x:Name="ActivityIndicator" IsRunning="True" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" HorizontalOptions="Center"/>
+    <videoPlayer:VideoPlayer Grid.Row="0" x:Name="Video" VideoSource="{Binding Url}" AutoPlay="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+  </Grid>
+</ViewCell>

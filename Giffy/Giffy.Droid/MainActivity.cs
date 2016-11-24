@@ -19,6 +19,7 @@ namespace Giffy.Droid
 
             base.OnCreate(bundle);
 
+            FFImageLoading.Forms.Droid.CachedImageRenderer.Init();
             IconControls.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
             Plugin.Iconize.Iconize.With(new MaterialModule())
                                   .With(new IoniconsModule());
