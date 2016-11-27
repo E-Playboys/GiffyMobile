@@ -11,8 +11,7 @@
              x:Class="Giffy.Views.SyntheticGIFPage"
              Title="{utilities:StringResource Synthetic}">
   <StackLayout>
-    <ListView x:Name="PostListView"
-                CachingStrategy="RecycleElement"
+    <controls:ExtendedListView x:Name="PostListView"
                 BackgroundColor="#ECEFF4"
                 ItemsSource="{Binding Gifs}"
                 HasUnevenRows="true"
@@ -20,13 +19,17 @@
                 RefreshCommand="{Binding RefreshCommand}"
                 IsRefreshing="{Binding IsBusy}"
                 Margin="5,0,5,0"
+                LoadMoreCommand="{Binding LoadMoreCommand}"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand">
-      <ListView.ItemTemplate>
+      <x:Arguments>
+        <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+      </x:Arguments>
+      <controls:ExtendedListView.ItemTemplate>
         <DataTemplate>
           <templates:GifViewCell />
         </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
+      </controls:ExtendedListView.ItemTemplate>
+    </controls:ExtendedListView>
   </StackLayout>
 </ContentPage>

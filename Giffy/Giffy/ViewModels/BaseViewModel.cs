@@ -39,6 +39,11 @@ namespace Giffy.ViewModels
             set { SetProperty(ref _isBusy, value); }
         }
 
+        public bool IsNotBusy
+        {
+            get { return !_isBusy; }
+        }
+
         #endregion
 
         #region Commands

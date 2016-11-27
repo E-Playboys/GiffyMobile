@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Giffy.Models;
-using Xam.Plugins.VideoPlayer;
+﻿using Xam.Plugins.VideoPlayer;
 using Xamarin.Forms;
 
 namespace Giffy.Views.Templates
