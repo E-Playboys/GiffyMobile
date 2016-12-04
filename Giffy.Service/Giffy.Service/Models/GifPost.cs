@@ -21,6 +21,30 @@ namespace Giffy.Service.Models
             }
         }
 
+        public string Mp4Url
+        {
+            get
+            {
+                return Url?.Replace(".gif", ".mp4");
+            }
+        }
+
+        public bool TitleIsVisible
+        {
+            get
+            {
+                return Title?.Length > 0;
+            }
+        }
+
+        public bool DescriptionIsVisible
+        {
+            get
+            {
+                return Description?.Length > 0;
+            }
+        }
+
         public List<Image> Images { get; set; } = new List<Image>();
     }
 }

@@ -4,50 +4,51 @@
           xmlns:videoPlayer="clr-namespace:Xam.Plugins.VideoPlayer;assembly=Xam.Plugins.VideoPlayer"
           xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
           xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+          xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
           x:Class="Giffy.Views.Templates.GifViewCell">
-  <Grid x:Name="GifPanel" RowSpacing="0,0,0,5" BackgroundColor="White" Margin="0,0,0,10" Padding="5">
+  <Grid RowSpacing="0,0,0,5" BackgroundColor="White" Margin="0,0,0,10" Padding="5">
     <Grid.RowDefinitions>
-      <RowDefinition Height="20" />
-      <RowDefinition Height="20" />
+      <RowDefinition Height="40" />
       <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="45" />
+      <ColumnDefinition Width="40" />
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
 
-    <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0,0,0,0">
-      <forms:CachedImage x:Name="Avatar" Source="{Binding CreatedUserAvatar}" 
+    <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,0,0">
+      <forms:CachedImage x:Name="Avatar" Source="{Binding CreatedUserAvatar}"
                          Aspect="Fill">
         <forms:CachedImage.Transformations>
           <transformations:CircleTransformation />
-        </forms:CachedImage.Transformations>  
+        </forms:CachedImage.Transformations>
       </forms:CachedImage>
     </Grid>
 
-    <Label Text="{Binding CreatedUserDisplayName}" FontSize="12" FontAttributes="Bold" TextColor="#45686E" Grid.Row="0"
-           Margin="5,0,0,0"
-           Grid.Column="1" Grid.ColumnSpan="4" VerticalOptions="Center" />
+    <Grid x:Name="PublishInfo" Grid.Row="0" Grid.RowSpacing="0" Grid.ColumnSpan="2" Grid.Column="1">
+      <Label Text="{Binding CreatedUserDisplayName}" FontSize="12" FontAttributes="Bold" TextColor="#45686E" Grid.Row="0"
+             Margin="5,0,0,0" VerticalOptions="Center" />
 
-    <Label Text="{Binding PublishedDate}" FontSize="12" TextColor="#45686E" Grid.Row="1"
-           Margin="5,0,0,0"
-           Grid.Column="1" Grid.ColumnSpan="4" VerticalOptions="Center" />
+      <Label Text="{Binding PublishedDate}" FontSize="12" TextColor="#45686E" Grid.Row="1"
+             Margin="5,0,0,0" VerticalOptions="Center" />
+    </Grid>
 
-    <Label Text="{Binding Title}" FontSize="22" TextColor="#45686E" Grid.Row="2" Grid.Column="0" Margin="0,0,0,0"
-               Grid.ColumnSpan="5"
+    <Label Text="{Binding Title}" IsVisible="{Binding TitleIsVisible}" FontSize="22" TextColor="#45686E" Grid.Row="2" Grid.Column="0" Margin="0,0,0,0"
+               Grid.ColumnSpan="3"
                VerticalOptions="Center" />
 
-    <Label Text="{Binding Description}" FontSize="14" TextColor="#45686E" Grid.Row="3" Grid.Column="0" Margin="0,0,0,0"
-           Grid.ColumnSpan="5"
+    <Label Text="{Binding Description}" IsVisible="{Binding DescriptionIsVisible}" FontSize="14" TextColor="#45686E" Grid.Row="3" Grid.Column="0" Margin="0,0,0,0"
+           Grid.ColumnSpan="3"
            VerticalOptions="Center" />
 
-    <Grid Grid.Row="4" Grid.ColumnSpan="5" Grid.Column="0" Margin="0,0,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+    <Grid x:Name="GifPanel" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="0" Margin="0,0,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
       <forms:CachedImage Grid.Row="0" x:Name="Thumbnail" Source="{Binding Url}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
       <ActivityIndicator Grid.Row="0" x:Name="ActivityIndicator" IsRunning="True" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" HorizontalOptions="Center"/>
-      <videoPlayer:VideoPlayer Grid.Row="0" x:Name="Video" VideoSource="{Binding Url}" AutoPlay="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+      <videoPlayer:VideoPlayer Grid.Row="0" x:Name="Video" VideoSource="{Binding Mp4Url}" AutoPlay="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+      <iconize:IconButton Grid.Row="0" x:Name="PlayButton" Text="fa-play-circle" FontSize="60" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" />
     </Grid>
   </Grid>
 </ViewCell>

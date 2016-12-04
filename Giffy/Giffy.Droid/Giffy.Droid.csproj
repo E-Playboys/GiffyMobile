@@ -110,6 +110,10 @@
       <HintPath>..\..\packages\Xam.Plugin.Iconize.1.0.10\lib\MonoAndroid10\Plugin.Iconize.Droid.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Plugin.Iconize.FontAwesome.Droid, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Iconize.FontAwesome.1.0.10\lib\MonoAndroid10\Plugin.Iconize.FontAwesome.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Plugin.Iconize.Ionicons.Droid, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.Iconize.Ionicons.1.0.10\lib\MonoAndroid10\Plugin.Iconize.Ionicons.Droid.dll</HintPath>
       <Private>True</Private>
