@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Giffy.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,13 @@ namespace Giffy.Views
         public SyntheticGIFPage()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            var context = BindingContext as SyntheticGIFPageViewModel;
+            if (context != null && !context.Gifs.Any()) await context.LoadGifSMs(0);
+            base.OnAppearing();
         }
     }
 }
